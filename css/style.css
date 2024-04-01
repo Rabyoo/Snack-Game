@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Cairo:wght@300;400;700&family=IBM+Plex+Mono:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Nobile:wght@400;500;700&family=Noto+Serif:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Playfair+Display:wght@500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@400;600&family=Roboto:wght@100;300;400;700&display=swap');
+
+:root {
+    --bg-color:#e3f2fd;
+    --bg-board: #293447;
+    --text-color: #b8c6dc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+.container {
+    width: 80vmin;
+    height: 80vmin;
+    background-color: var(--bg-board);
+    position: relative;
+    top: -20px;
+    border-radius: 10px;
+}
+.results {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+}
+.results > div > h3 {
+    font-weight: normal;
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    background-color: #212837;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    /* border-radius: 0 0 10px 10px; */
+}
+.play-board .food {
+    background: #ff003d;
+}
+.play-board .head {
+    background: #60cbff;
+}
+.controls {
+    display: flex;
+    justify-content: space-between;
+    background: #293447;
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+.controls i {
+    position: relative;
+    padding: 15px 0;
+    border-right: 1px solid #ddd;
+    width: calc(100% / 4);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #b8c6dc;
+}
+/* Start Media Query */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0 5px;
+        height: 380px;
+        position: relative;
+        top: -50px;
+    }
+    .controls {
+        display: flex;
+    }
+}
+/* End Media Query */
